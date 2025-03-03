@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Period Tracker</title>
+    <title>FlowTrack – Period Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Period Tracker</h1>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+        <h1>FlowTrack – Period Tracker</h1>
+        
+        <div id="factPopup" class="popup">
+            <p id="randomFact"></p>
+            <button onclick="closePopup()">Close</button>
+        </div>
         
         <form id="periodForm">
             <label for="start_date">Start Date:</label>
@@ -29,6 +35,9 @@
             
             <button type="submit">Log Period</button>
         </form>
+        
+        <h2>Cycle Calendar</h2>
+        <div id="calendarView"></div>
         
         <h2>Logged Cycles</h2>
         <ul id="cycleList"></ul>
