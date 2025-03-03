@@ -11,18 +11,7 @@ FlowTrack is a modern, user-friendly period tracking app designed to help users 
 
 **Tech Stack**
 Frontend: HTML, CSS, JavaScript
-Hosting: GitHub Pages / Netlify (optional)
-
-
-**How to Use**
-Clone the Repository:
-git clone https://github.com/your-username/flowtrack.git
-
-Open the Project Folder and run index.html in a browser.
-
-
-**Live Demo**
-🔗 Try FlowTrack Online
+Hosting: GitHub Pages 
 
 **Contributing**
 Feel free to contribute by submitting a pull request or reporting issues!
