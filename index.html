@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Period Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Period Tracker</h1>
+        
+        <form id="periodForm">
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" required>
+            
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" required>
+            
+            <label for="flow">Flow Intensity:</label>
+            <select id="flow">
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="heavy">Heavy</option>
+            </select>
+            
+            <label for="notes">Notes:</label>
+            <textarea id="notes" placeholder="Any observations..."></textarea>
+            
+            <button type="submit">Log Period</button>
+        </form>
+        
+        <h2>Logged Cycles</h2>
+        <ul id="cycleList"></ul>
+        
+        <h2>Ovulation & Fertility Prediction</h2>
+        <p id="fertilityInfo">Enter at least one cycle to predict your ovulation window.</p>
+        
+        <h2>Symptom Tracking</h2>
+        <form id="symptomForm">
+            <label for="symptom">Select Symptom:</label>
+            <select id="symptom">
+                <option value="cramps">Cramps</option>
+                <option value="bloating">Bloating</option>
+                <option value="headache">Headache</option>
+                <option value="mood_swings">Mood Swings</option>
+                <option value="fatigue">Fatigue</option>
+            </select>
+            <button type="submit">Log Symptom</button>
+        </form>
+        <ul id="symptomList"></ul>
+        
+        <h2>Set Reminders</h2>
+        <form id="reminderForm">
+            <label for="reminder_date">Reminder Date:</label>
+            <input type="date" id="reminder_date" required>
+            
+            <label for="reminder_text">Reminder:</label>
+            <input type="text" id="reminder_text" required>
+            
+            <button type="submit">Set Reminder</button>
+        </form>
+        <ul id="reminderList"></ul>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
