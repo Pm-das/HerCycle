@@ -6,7 +6,73 @@ document.addEventListener("DOMContentLoaded", () => {
     const symptomForm = document.getElementById("symptomForm");
     const symptomList = document.getElementById("symptomList");
 
-    const reminderForm = document.getElementById("reminderForm");
+    const reminderForm = document.getElementById("reminderForm");document.addEventListener("DOMContentLoaded", function() {
+    // Random Fact Pop-up
+    const facts = [
+        "The average cycle lasts 28 days, but it can range from 21-35 days.",
+        "Your period can be affected by stress and diet.",
+        "Ovulation usually happens around day 14 of a 28-day cycle.",
+        "Hormones like estrogen and progesterone regulate the cycle.",
+        "Drinking more water can reduce bloating during your period."
+    ];
+    document.getElementById("randomFact").textContent = facts[Math.floor(Math.random() * facts.length)];
+    document.getElementById("factPopup").style.display = "block";
+
+    // Close Pop-up
+    window.closePopup = function() {
+        document.getElementById("factPopup").style.display = "none";
+    };
+
+    // Dark Mode Toggle
+    document.getElementById("darkModeToggle").addEventListener("click", function() {
+        document.body.classList.toggle("dark-mode");
+    });
+
+    // Period Log
+    document.getElementById("periodForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let startDate = document.getElementById("start_date").value;
+        let endDate = document.getElementById("end_date").value;
+        let flow = document.getElementById("flow").value;
+        let notes = document.getElementById("notes").value;
+
+        if (startDate && endDate) {
+            let cycleList = document.getElementById("cycleList");
+            let listItem = document.createElement("li");
+            listItem.textContent = `Start: ${startDate}, End: ${endDate}, Flow: ${flow}, Notes: ${notes}`;
+            cycleList.appendChild(listItem);
+
+            updateCalendar(startDate, endDate);
+            predictNextCycle(startDate, endDate);
+        }
+    });
+
+    // Update Calendar View
+    function updateCalendar(start, end) {
+        document.getElementById("calendarView").innerHTML = `Last period: ${start} - ${end}`;
+    }
+
+    // Predict Next Cycle
+    function predictNextCycle(start, end) {
+        let startDate = new Date(start);
+        let endDate = new Date(end);
+        let avgCycle = (endDate - startDate) / (1000 * 60 * 60 * 24);
+
+        let nextStart = new Date(endDate);
+        nextStart.setDate(endDate.getDate() + avgCycle);
+
+        let fertilityStart = new Date(nextStart);
+        fertilityStart.setDate(nextStart.getDate() - 14);
+
+        let fertilityEnd = new Date(fertilityStart);
+        fertilityEnd.setDate(fertilityStart.getDate() + 4);
+
+        document.getElementById("fertilityInfo").textContent =
+            `Predicted next cycle: ${nextStart.toDateString()} 
+             Fertile Window: ${fertilityStart.toDateString()} - ${fertilityEnd.toDateString()}`;
+    }
+});
+
     const reminderList = document.getElementById("reminderList");
 
     let cycles = [];
