@@ -8,14 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <button id="darkModeToggle">Toggle Dark Mode</button>
+        <button id="darkModeToggle">🌙 Dark Mode</button>
         <h1>FlowTrack – Period Tracker</h1>
         
-        <div id="factPopup" class="popup">
-            <p id="randomFact"></p>
-            <button onclick="closePopup()">Close</button>
+        <!-- Fun Fact Pop-up -->
+        <div id="funFactPopup" class="popup">
+            <p id="funFactText"></p>
+            <button onclick="closePopup()">OK</button>
         </div>
-        
+
         <form id="periodForm">
             <label for="start_date">Start Date:</label>
             <input type="date" id="start_date" required>
@@ -36,29 +37,16 @@
             <button type="submit">Log Period</button>
         </form>
         
-        <h2>Cycle Calendar</h2>
-        <div id="calendarView"></div>
-        
         <h2>Logged Cycles</h2>
         <ul id="cycleList"></ul>
+
+        <h2>Cycle Prediction</h2>
+        <p id="cyclePrediction">Enter at least one cycle to predict your next period.</p>
         
-        <h2>Ovulation & Fertility Prediction</h2>
-        <p id="fertilityInfo">Enter at least one cycle to predict your ovulation window.</p>
-        
-        <h2>Symptom Tracking</h2>
-        <form id="symptomForm">
-            <label for="symptom">Select Symptom:</label>
-            <select id="symptom">
-                <option value="cramps">Cramps</option>
-                <option value="bloating">Bloating</option>
-                <option value="headache">Headache</option>
-                <option value="mood_swings">Mood Swings</option>
-                <option value="fatigue">Fatigue</option>
-            </select>
-            <button type="submit">Log Symptom</button>
-        </form>
-        <ul id="symptomList"></ul>
-        
+        <h2>Calendar View</h2>
+        <input type="month" id="calendarView">
+        <ul id="calendarData"></ul>
+
         <h2>Set Reminders</h2>
         <form id="reminderForm">
             <label for="reminder_date">Reminder Date:</label>
