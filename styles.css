@@ -1,66 +1,78 @@
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
+    margin: 0;
     padding: 20px;
+    text-align: center;
 }
 
+/* Container */
 .container {
     max-width: 600px;
     margin: auto;
     background: white;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
-    text-align: center;
+/* Forms */
+form {
+    margin-bottom: 20px;
 }
 
-button {
+label {
+    font-weight: bold;
+}
+
+input, select, textarea, button {
+    width: 100%;
     padding: 10px;
-    background-color: #ff6b6b;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    background-color: #ff4081;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
 }
 
 button:hover {
-    background-color: #ff4c4c;
-}
-
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#calendarView {
-    margin: 20px 0;
-    padding: 10px;
-    background: #eee;
-    text-align: center;
-    border-radius: 5px;
+    background-color: #e91e63;
 }
 
 /* Dark Mode */
 .dark-mode {
-    background-color: #222;
+    background-color: #121212;
     color: white;
 }
 
 .dark-mode .container {
     background: #333;
+    color: white;
 }
 
+#darkModeToggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+/* Fun Fact Popup */
 .popup {
     display: none;
     position: fixed;
-    top: 20%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
@@ -71,5 +83,5 @@ input, select, textarea {
 
 .popup button {
     margin-top: 10px;
-    background: #555;
+    background-color: #333;
 }
